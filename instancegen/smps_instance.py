@@ -1,15 +1,9 @@
 import numpy as np
-import pdb
 
 RHS = "RHS"
 ROWS = "ROWS"
 COLUMNS = "COLUMNS"
 PERIODS = "PERIODS"
-
-STOCH_RHS = 0
-STOCH_COEF = 1
-STOCH_OBJ = 2
-STOCH_COUNT = 3
 
 class Instance:
    def __init__(self, corfile = None, timfile = None, stofile = None):
@@ -174,107 +168,16 @@ class Instance:
       '''
       writes the scenarios with RHS stochasticity
       '''
-      # storing the first stage RHS to compute the standard deviationi
-      #pdb.set_trace()
-      stage = 0
-      stagerhs = []
-      secondstagecons = []
-      for cons in self.constraints:
-         if cons == self.periods[1][2]:
-            stage += 1
-
-         if stage == 0:
-            stagerhs.append(self.rhs[cons])
-         else:
-            secondstagecons.append(cons)
-
-      # computing the standard deviation
-      stagestd = np.std(stagerhs)*2
-
-      # writing the scenarios to the STO file
-      weight = 1.0/float(nscenarios)
-      for i in range(nscenarios):
-         outfile.write(" SC SCEN%d      ROOT         %g        %s\n"%(i + 1, weight, self.periods[1][0]))
-         for cons in secondstagecons:
-            # computing the RHS of the constraint from a normal distribution
-            #randrhs = int(np.random.normal(self.rhs[cons], stagestd))
-            randrhs = round(np.random.random_sample())
-            outfile.write("    RHS      %s               %g\n"%(cons, randrhs))
+      pass
 
    def writeCoefStochasticFile(self, outfile, nscenarios):
       '''
       writes the scenarios with coefficient stochasticity
       '''
-      # storing the first stage RHS to compute the standard deviationi
-      stage = 0
-      secondstagecons = []
-      for cons in self.constraints:
-         if cons == self.periods[1][2]:
-            stage += 1
-
-         if stage == 1:
-            secondstagecons.append(cons)
-
-      secondstagevars = []
-      stage = 0
-      for var in self.variables:
-         if var == self.periods[1][1]:
-            stage += 1
-
-         if stage == 1:
-            secondstagevars.append(var)
-
-      # writing the scenarios to the STO file
-      weight = 1.0/float(nscenarios)
-      for i in range(nscenarios):
-         outfile.write(" SC SCEN%d      ROOT         %g        %s\n"%(i + 1, weight, self.periods[1][0]))
-         for cons in secondstagecons:
-            if cons.startswith("Recovery"):
-               for var in secondstagevars:
-                  if var.startswith("Recovery") and (var, cons) in self.coeffs and self.coeffs[var, cons] == 1:
-                     randcoef = 1 - np.random.binomial(1, 0.05)
-                     if randcoef == 0:
-                        outfile.write("    %s      %s               %g\n"%(var, cons, randcoef))
+      pass
 
    def writeObjStochasticFile(self, outfile, nscenarios):
       '''
       writes the scenarios with coefficient stochasticity
       '''
-      secondstagevars = []
-      stage = 0
-      for var in self.variables:
-         if var == self.periods[1][1]:
-            stage += 1
-
-         if stage == 1:
-            if var.startswith('Recovery'):
-               secondstagevars.append(var)
-
-      # writing the scenarios to the STO file
-      weight = 1.0/float(nscenarios)
-      for i in range(nscenarios):
-         outfile.write(" SC SCEN%d      ROOT         %g        %s\n"%(i + 1, weight, self.periods[1][0]))
-         for var in secondstagevars:
-            if np.random.binomial(1, 0.1) == 1:
-               randobj = (np.random.poisson() + 1)*100
-               outfile.write("    %s      obj               %g\n"%(var, randobj))
-
-
-if __name__ == "__main__":
-   import sys
-
-   if len(sys.argv) < 3:
-      print "Usage: %s instance-name numscenarios [type]" % sys.argv[0]
-      exit(1)
-   else:
-      print sys.argv
-
-      stochtype = 0
-      if len(sys.argv) == 4:
-         stochtype = int(sys.argv[3])
-         assert stochtype >= STOCH_RHS and stochtype < STOCH_COUNT
-
-      instance = Instance("%s.cor"%(sys.argv[1]), "%s.tim"%(sys.argv[1]),
-            "%s_%s.sto"%(sys.argv[1],sys.argv[2]))
-      instance.writeStoFile(int(sys.argv[2]), stochtype)
-      instance.writeSmpsFile()
+      pass
