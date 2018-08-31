@@ -1,5 +1,10 @@
 import numpy as np
 
+STOCH_RHS = 0
+STOCH_COEF = 1
+STOCH_OBJ = 2
+STOCH_COUNT = 3
+
 RHS = "RHS"
 ROWS = "ROWS"
 COLUMNS = "COLUMNS"

@@ -1,12 +1,6 @@
 import numpy as np
 from .smps_instance import Instance
 
-instances = {
-      "rrtailassign" : RRTailAssignInstance
-      , "sslp" : SSLPInstance
-      , "smkp" : SMKPInstance
-      }
-
 class RRTailAssignInstance(Instance):
    '''
    SMPS output functions for the recoverable robustness tail assignment problem

@@ -1,11 +1,4 @@
-import numpy as np
-from instancegen import SSLPInstance
-import pdb
-
-STOCH_RHS = 0
-STOCH_COEF = 1
-STOCH_OBJ = 2
-STOCH_COUNT = 3
+import instancegen as ig
 
 
 
@@ -21,9 +14,10 @@ if __name__ == "__main__":
       stochtype = 0
       if len(sys.argv) == 4:
          stochtype = int(sys.argv[3])
-         assert stochtype >= STOCH_RHS and stochtype < STOCH_COUNT
+         assert stochtype >= ig.STOCH_RHS and stochtype < ig.STOCH_COUNT
 
-      instance = SSLPInstance("%s.cor"%(sys.argv[1]), "%s.tim"%(sys.argv[1]),
-            "%s_%s.sto"%(sys.argv[1],sys.argv[2]))
+      instance = ig.instances["sslp"](
+            "%s.cor"%(sys.argv[1]),"%s.tim"%(sys.argv[1]),
+            "%s_%s.sto"%(sys.argv[1], sys.argv[2]))
       instance.writeStoFile(int(sys.argv[2]), stochtype)
       instance.writeSmpsFile()
