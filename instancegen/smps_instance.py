@@ -132,8 +132,8 @@ class Instance:
       '''
       stores the variables of the problem
       '''
-      # if the INTSTART or INTEND keywords are found, then we exit the function
-      if "INTSTART" in line or "INTEND" in line:
+      # if the MARKER keyword is found, then we exit the function
+      if "MARKER" in line:
          return
 
       linelist = line.split()
@@ -173,16 +173,22 @@ class Instance:
       '''
       writes the scenarios with RHS stochasticity
       '''
-      pass
+      print "The write RHS stochastic file has not been implemented"
 
    def writeCoefStochasticFile(self, outfile, nscenarios):
       '''
       writes the scenarios with coefficient stochasticity
       '''
-      pass
+      print "The write coefficient stochastic file has not been implemented"
 
    def writeObjStochasticFile(self, outfile, nscenarios):
       '''
-      writes the scenarios with coefficient stochasticity
+      writes the scenarios with objective stochasticity
+      '''
+      print "The write objective stochastic file has not been implemented"
+
+   def writeStageFile(self, outfile):
+      '''
+      writes the stages file for a given core file
       '''
       pass
