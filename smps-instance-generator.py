@@ -227,12 +227,12 @@ class Instance:
       # writing the scenarios to the STO file
       weight = 1.0/float(nscenarios)
       for i in range(nscenarios):
-         outfile.write(" SC SCEN%d      ROOT         %g        %s\n"%(i + 1, weight, self.periods[1][0]))
+         outfile.write(" SC SCEN%d      ROOT         %g        %s        0.0\n"%(i + 1, weight, self.periods[1][0]))
          for cons in secondstagecons:
-            if cons.startswith("Recovery"):
+            if cons.startswith("RecoveryFlight"):
                for var in secondstagevars:
                   if var.startswith("Recovery") and (var, cons) in self.coeffs and self.coeffs[var, cons] == 1:
-                     randcoef = 1 - np.random.binomial(1, 0.05)
+                     randcoef = 1 - np.random.binomial(1, 0.01)
                      if randcoef == 0:
                         outfile.write("    %s      %s               %g\n"%(var, cons, randcoef))
 
@@ -253,7 +253,7 @@ class Instance:
       # writing the scenarios to the STO file
       weight = 1.0/float(nscenarios)
       for i in range(nscenarios):
-         outfile.write(" SC SCEN%d      ROOT         %g        %s\n"%(i + 1, weight, self.periods[1][0]))
+         outfile.write(" SC SCEN%d      ROOT         %g        %s        0.0\n"%(i + 1, weight, self.periods[1][0]))
          for var in secondstagevars:
             if np.random.binomial(1, 0.1) == 1:
                randobj = (np.random.poisson() + 1)*100
