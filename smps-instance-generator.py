@@ -90,7 +90,7 @@ class Instance:
       writes an STO file
       '''
       assert self.stofile is not None
-      np.random.seed(1)
+      np.random.seed(nscenarios)
       with open(self.stofile, 'w') as outfile:
          # writing the header of the STO file
          outfile.write("STOCH\n")
