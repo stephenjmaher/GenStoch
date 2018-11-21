@@ -21,8 +21,18 @@ class Instance:
       self.rhs = {}
       self.periods = []
 
-      self.readCorFile()
-      self.readTimFile()
+   def readInstance(self, readCor = False, readTim = False, readSto = False):
+      '''
+      reads the specified files for the instance in SMPS format
+      '''
+      if readCor:
+         self.readCorFile()
+
+      if readTim:
+         self.readTimFile()
+
+      if readSto:
+         self.readStoFile()
 
    def readCorFile(self):
       '''
@@ -83,6 +93,19 @@ class Instance:
       reads a STO file for an SMPS instance
       '''
       pass
+
+   def writeTimFile(self):
+      '''
+      writes the TIM file of the SMPS format
+      '''
+      assert self.timfile is not None
+      with open(self.timfile, 'w') as outfile:
+         outfile.write("TIME\n")
+         outfile.write("PERIODS   LP\n")
+
+         self.writeStageFile(outfile)
+
+         outfile.write("ENDATA")
 
    def writeStoFile(self, nscenarios, stochtype = STOCH_RHS):
       '''
