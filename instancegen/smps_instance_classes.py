@@ -102,3 +102,65 @@ class SSLPInstance(Instance):
             randrhs = round(np.random.random_sample())
             outfile.write("    RHS      %s               %g\n"%(cons, randrhs))
 
+
+class NoswotInstance(Instance):
+   '''
+   SMPS output functions for the MIPLIB noswot instance
+   '''
+
+   def writeStageFile(self, outfile):
+      '''
+      writes the stages file for a given core file
+      '''
+      stageconsstart = []
+      stagevarstart = []
+
+      # scanning all of the constraints to find the different stages
+      stageconsstart.append(self.constraints[0])
+      for cons in self.constraints[1:]:
+         if cons.startswith("p"):
+            stageconsstart.append(cons)
+            break
+
+      # scanning all of the variables to find the different stages
+      stagevarstart.append(self.variables[0])
+      for var in self.variables[1:]:
+         if var.startswith("pr"):
+            stagevarstart.append(var)
+            break
+
+      # writing the stages to the TIM file
+      assert len(stageconsstart) == len(stagevarstart)
+      for i in range(len(stageconsstart)):
+         outfile.write("     %s     %s     STAGE-%d\n"%(stagevarstart[i],
+            stageconsstart[i], i + 1))
+
+   def writeRhsStochasticFile(self, outfile, nscenarios):
+      '''
+      writes the scenarios with RHS stochasticity
+      '''
+      # storing the first stage RHS to compute the standard deviationi
+      stage = 0
+      stagerhs = []
+      secondstagecons = []
+      for cons in self.constraints:
+         if cons == self.periods[1][2]:
+            stage += 1
+
+         if stage == 0:
+            stagerhs.append(self.rhs[cons])
+         else:
+            secondstagecons.append(cons)
+
+      # computing the standard deviation
+      stagestd = np.std(stagerhs)*2
+
+      # writing the scenarios to the STO file
+      weight = 1.0/float(nscenarios)
+      for i in range(nscenarios):
+         outfile.write(" SC SCEN%d      ROOT         %g        %s\n"%(i + 1, weight, self.periods[1][0]))
+         #for cons in secondstagecons:
+            ## computing the RHS of the constraint from a normal distribution
+            ##randrhs = int(np.random.normal(self.rhs[cons], stagestd))
+            #randrhs = round(np.random.random_sample())
+            #outfile.write("    RHS      %s               %g\n"%(cons, randrhs))

@@ -16,8 +16,9 @@ if __name__ == "__main__":
          stochtype = int(sys.argv[3])
          assert stochtype >= ig.STOCH_RHS and stochtype < ig.STOCH_COUNT
 
-      instance = ig.instances["sslp"](
+      instance = ig.instances["noswot"](
             "%s.cor"%(sys.argv[1]),"%s.tim"%(sys.argv[1]),
             "%s_%s.sto"%(sys.argv[1], sys.argv[2]))
+      instance.readInstance(readCor = True, readTim = True)
       instance.writeStoFile(int(sys.argv[2]), stochtype)
       instance.writeSmpsFile()
