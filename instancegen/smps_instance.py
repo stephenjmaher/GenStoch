@@ -1,15 +1,14 @@
 import numpy as np
-import pdb
-
-RHS = "RHS"
-ROWS = "ROWS"
-COLUMNS = "COLUMNS"
-PERIODS = "PERIODS"
 
 STOCH_RHS = 0
 STOCH_COEF = 1
 STOCH_OBJ = 2
 STOCH_COUNT = 3
+
+RHS = "RHS"
+ROWS = "ROWS"
+COLUMNS = "COLUMNS"
+PERIODS = "PERIODS"
 
 class Instance:
    def __init__(self, corfile = None, timfile = None, stofile = None):
@@ -22,8 +21,18 @@ class Instance:
       self.rhs = {}
       self.periods = []
 
-      self.readCorFile()
-      self.readTimFile()
+   def readInstance(self, readCor = False, readTim = False, readSto = False):
+      '''
+      reads the specified files for the instance in SMPS format
+      '''
+      if readCor:
+         self.readCorFile()
+
+      if readTim:
+         self.readTimFile()
+
+      if readSto:
+         self.readStoFile()
 
    def readCorFile(self):
       '''
@@ -85,6 +94,19 @@ class Instance:
       '''
       pass
 
+   def writeTimFile(self):
+      '''
+      writes the TIM file of the SMPS format
+      '''
+      assert self.timfile is not None
+      with open(self.timfile, 'w') as outfile:
+         outfile.write("TIME\n")
+         outfile.write("PERIODS   LP\n")
+
+         self.writeStageFile(outfile)
+
+         outfile.write("ENDATA")
+
    def writeStoFile(self, nscenarios, stochtype = STOCH_RHS):
       '''
       writes an STO file
@@ -133,8 +155,8 @@ class Instance:
       '''
       stores the variables of the problem
       '''
-      # if the INTSTART or INTEND keywords are found, then we exit the function
-      if "INTSTART" in line or "INTEND" in line:
+      # if the MARKER keyword is found, then we exit the function
+      if "MARKER" in line:
          return
 
       linelist = line.split()
@@ -174,107 +196,22 @@ class Instance:
       '''
       writes the scenarios with RHS stochasticity
       '''
-      # storing the first stage RHS to compute the standard deviationi
-      #pdb.set_trace()
-      stage = 0
-      stagerhs = []
-      secondstagecons = []
-      for cons in self.constraints:
-         if cons == self.periods[1][2]:
-            stage += 1
-
-         if stage == 0:
-            stagerhs.append(self.rhs[cons])
-         else:
-            secondstagecons.append(cons)
-
-      # computing the standard deviation
-      stagestd = np.std(stagerhs)*2
-
-      # writing the scenarios to the STO file
-      weight = 1.0/float(nscenarios)
-      for i in range(nscenarios):
-         outfile.write(" SC SCEN%d      ROOT         %g        %s\n"%(i + 1, weight, self.periods[1][0]))
-         for cons in secondstagecons:
-            # computing the RHS of the constraint from a normal distribution
-            #randrhs = int(np.random.normal(self.rhs[cons], stagestd))
-            randrhs = round(np.random.random_sample())
-            outfile.write("    RHS      %s               %g\n"%(cons, randrhs))
+      print "The write RHS stochastic file has not been implemented"
 
    def writeCoefStochasticFile(self, outfile, nscenarios):
       '''
       writes the scenarios with coefficient stochasticity
       '''
-      # storing the first stage RHS to compute the standard deviationi
-      stage = 0
-      secondstagecons = []
-      for cons in self.constraints:
-         if cons == self.periods[1][2]:
-            stage += 1
-
-         if stage == 1:
-            secondstagecons.append(cons)
-
-      secondstagevars = []
-      stage = 0
-      for var in self.variables:
-         if var == self.periods[1][1]:
-            stage += 1
-
-         if stage == 1:
-            secondstagevars.append(var)
-
-      # writing the scenarios to the STO file
-      weight = 1.0/float(nscenarios)
-      for i in range(nscenarios):
-         outfile.write(" SC SCEN%d      ROOT         %g        %s        0.0\n"%(i + 1, weight, self.periods[1][0]))
-         for cons in secondstagecons:
-            if cons.startswith("RecoveryFlight"):
-               for var in secondstagevars:
-                  if var.startswith("Recovery") and (var, cons) in self.coeffs and self.coeffs[var, cons] == 1:
-                     randcoef = 1 - np.random.binomial(1, 0.01)
-                     if randcoef == 0:
-                        outfile.write("    %s      %s               %g\n"%(var, cons, randcoef))
+      print "The write coefficient stochastic file has not been implemented"
 
    def writeObjStochasticFile(self, outfile, nscenarios):
       '''
-      writes the scenarios with coefficient stochasticity
+      writes the scenarios with objective stochasticity
       '''
-      secondstagevars = []
-      stage = 0
-      for var in self.variables:
-         if var == self.periods[1][1]:
-            stage += 1
+      print "The write objective stochastic file has not been implemented"
 
-         if stage == 1:
-            if var.startswith('Recovery'):
-               secondstagevars.append(var)
-
-      # writing the scenarios to the STO file
-      weight = 1.0/float(nscenarios)
-      for i in range(nscenarios):
-         outfile.write(" SC SCEN%d      ROOT         %g        %s        0.0\n"%(i + 1, weight, self.periods[1][0]))
-         for var in secondstagevars:
-            if np.random.binomial(1, 0.1) == 1:
-               randobj = (np.random.poisson() + 1)*100
-               outfile.write("    %s      obj               %g\n"%(var, randobj))
-
-
-if __name__ == "__main__":
-   import sys
-
-   if len(sys.argv) < 3:
-      print "Usage: %s instance-name numscenarios [type]" % sys.argv[0]
-      exit(1)
-   else:
-      print sys.argv
-
-      stochtype = 0
-      if len(sys.argv) == 4:
-         stochtype = int(sys.argv[3])
-         assert stochtype >= STOCH_RHS and stochtype < STOCH_COUNT
-
-      instance = Instance("%s.cor"%(sys.argv[1]), "%s.tim"%(sys.argv[1]),
-            "%s_%s.sto"%(sys.argv[1],sys.argv[2]))
-      instance.writeStoFile(int(sys.argv[2]), stochtype)
-      instance.writeSmpsFile()
+   def writeStageFile(self, outfile):
+      '''
+      writes the stages file for a given core file
+      '''
+      pass
