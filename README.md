@@ -1,6 +1,6 @@
 # Generating Stochastic Programming Instances
 
-A simple python package for the generation of stochastic programming instances in the [SMPS format][1]. Different to
+A simple python package for the generation of stochastic programming instances in the SMPS format[1]. Different to
 other instance generation packages, the _GenStoch_ package requires a core (or base) file on which a stochastic program
 is generated. Since the core file is in the format of an MPS file, it is possible to generate scenarios for any instance
 that is currently available in MPS format.
@@ -56,9 +56,9 @@ functions are:
 
 Any derived classes need to be added to the `instances` dictionary in the `__init__.py` file.
 
-The package supports the writing of stochastic files for the SSLP instances from SIPLIB and [Recoverable robust tail
-assignment (RRTAP) instances][2]. Also, it is possible to write the stages file for the
-[NOSWOT](http://miplib2010.zib.de/miplib2010/noswot.php) instance and for the [SNIP][3] instances.
+The package supports the writing of stochastic files for the SSLP instances from SIPLIB and Recoverable robust tail
+assignment (RRTAP) instances[2]. Also, it is possible to write the stages file for the
+[NOSWOT](http://miplib2010.zib.de/miplib2010/noswot.php) instance and for the SNIP[3] instances.
 
 ## Scripts
 
@@ -72,6 +72,8 @@ Two scripts are available:
 - `smps_write_tim_file`: writes a stages file for a given core file. The stages file is created based on the constraint
   and variable names from the core file.
 
-\[1\]: Birge, J. R.; Dempster, M. A.; Gassmann, H. I.; Gunn, E.; King, A. J. & Wallace, S. W. A standard input format for multiperiod stochastic linear programs IIASA, Laxenburg, Austria, IIASA, Laxenburg, Austria, WP-87-118, 1987
-\[2\]: Maher, S. J.; Desaulniers, G. & Soumis, F. Recoverable robust single day aircraft maintenance routing problem Computers & Operations Research, 2014, 51, 130-145
-\[3\]: Bodur, M.; Dash, S.; Günlük, O. & Luedtke, J. Strengthened Benders Cuts for Stochastic Integer Programs with Continuous Recourse INFORMS Journal on Computing, 2017, 29, 77-91
+[1]: Birge, J. R.; Dempster, M. A.; Gassmann, H. I.; Gunn, E.; King, A. J. & Wallace, S. W. A standard input format for multiperiod stochastic linear programs IIASA, Laxenburg, Austria, IIASA, Laxenburg, Austria, WP-87-118, 1987
+
+[2]: Maher, S. J.; Desaulniers, G. & Soumis, F. Recoverable robust single day aircraft maintenance routing problem Computers & Operations Research, 2014, 51, 130-145
+
+[3]: Bodur, M.; Dash, S.; Günlük, O. & Luedtke, J. Strengthened Benders Cuts for Stochastic Integer Programs with Continuous Recourse INFORMS Journal on Computing, 2017, 29, 77-91
