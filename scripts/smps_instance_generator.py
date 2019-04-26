@@ -1,3 +1,8 @@
+"""
+The MIT License (MIT)
+
+@author: Stephen J. Maher
+"""
 import sys
 import os.path
 import instancegen as ig

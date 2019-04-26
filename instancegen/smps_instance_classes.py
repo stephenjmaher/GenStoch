@@ -1,3 +1,8 @@
+"""
+The MIT License (MIT)
+
+@author: Stephen J. Maher
+"""
 import numpy as np
 from .smps_instance import Instance
 

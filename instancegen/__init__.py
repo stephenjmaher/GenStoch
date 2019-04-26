@@ -1,3 +1,8 @@
+"""
+The MIT License (MIT)
+
+@author: Stephen J. Maher
+"""
 import os.path
 from .smps_instance import *
 from .smps_instance_classes import *
