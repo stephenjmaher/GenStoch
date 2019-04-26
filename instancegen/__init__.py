@@ -127,7 +127,7 @@ def validStochasticityType(stochtype):
    if stochtype not in STOCH_TYPES:
       print("   ERROR: Stochasicity type <%s> is invalid. Available stochasticity "\
             "types (%s) (default %s)"\
-            %(".".join(map(str, STOCH_TYPES)), str(STOCH_TYPES[0])))
+            %(stochtype, ", ".join(map(str, STOCH_TYPES)), str(STOCH_TYPES[0])))
       return False
 
    return True
