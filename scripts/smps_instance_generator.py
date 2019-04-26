@@ -1,24 +1,44 @@
+import sys
+import os.path
 import instancegen as ig
 
-
-
 if __name__ == "__main__":
-   import sys
-
-   if len(sys.argv) < 3:
-      print "Usage: %s instance-name numscenarios [type]" % sys.argv[0]
+   # printing the help message
+   if (len(sys.argv) == 2 and sys.argv[1] == "--help")\
+         or len(sys.argv) < 4 or len(sys.argv) == 1:
+      print("Usage: %s instance-class instance-name numscenarios [type]"%sys.argv[0])
+      print("  instance-class : the instance class. Available classes (%s)"%", ".join(map(str, ig.instances.keys())))
+      print("  instance-name  : the name of the instance (without extension)")
+      print("  numscenarios   : the number of scenarios to generate")
+      print("  type           : the type of stochasticity. Available types (%s) (default %s)"\
+                  %(", ".join(map(str, ig.STOCH_TYPES)), str(ig.STOCH_TYPES[0])))
       exit(1)
-   else:
-      print sys.argv
 
-      stochtype = 0
-      if len(sys.argv) == 4:
-         stochtype = int(sys.argv[3])
-         assert stochtype >= ig.STOCH_RHS and stochtype < ig.STOCH_COUNT
+   print("Arguments:", sys.argv)
 
-      instance = ig.instances["noswot"](
-            "%s.cor"%(sys.argv[1]),"%s.tim"%(sys.argv[1]),
-            "%s_%s.sto"%(sys.argv[1], sys.argv[2]))
-      instance.readInstance(readCor = True, readTim = True)
-      instance.writeStoFile(int(sys.argv[2]), stochtype)
-      instance.writeSmpsFile()
+   instanceclass = sys.argv[1]
+   instancename = sys.argv[2]
+   extensions = ["cor", "tim"]
+   numscenarios = sys.argv[3]
+   stochtype = ig.STOCH_RHS
+   if len(sys.argv) == 5:
+      stochtype = int(sys.argv[4])
+
+   # verifying the inputs for the script
+   if not ig.validInputs(instanceclass, instancename, extensions, numscenarios,
+         stochtype):
+      exit(1)
+
+   # initialising the instance
+   instance = ig.instances[instanceclass](
+         "%s.cor"%(instancename),"%s.tim"%(instancename),
+         "%s_%s.sto"%(instancename, numscenarios))
+
+   # reading the instance core and time-stages files
+   instance.readInstance(readCor = True, readTim = True)
+
+   # writing the stochastic file
+   instance.writeStoFile(int(numscenarios), stochtype)
+
+   # writing the SMPS file (used by SCIP).
+   instance.writeSmpsFile()

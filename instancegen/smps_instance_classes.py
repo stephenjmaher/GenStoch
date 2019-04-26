@@ -71,6 +71,33 @@ class SSLPInstance(Instance):
    SMPS output functions for SSLP instances
    '''
 
+   def writeStageFile(self, outfile):
+      '''
+      writes the stages file for a given core file
+      '''
+      stageconsstart = []
+      stagevarstart = []
+
+      # scanning all of the constraints to find the different stages
+      stageconsstart.append(self.constraints[0])
+      for cons in self.constraints[1:]:
+         if cons.startswith("c2"):
+            stageconsstart.append(cons)
+            break
+
+      # scanning all of the variables to find the different stages
+      stagevarstart.append(self.variables[0])
+      for var in self.variables[1:]:
+         if var.startswith("y_1_1"):
+            stagevarstart.append(var)
+            break
+
+      # writing the stages to the TIM file
+      assert len(stageconsstart) == len(stagevarstart)
+      for i in range(len(stageconsstart)):
+         outfile.write("     %s     %s     STAGE-%d\n"%(stagevarstart[i],
+            stageconsstart[i], i + 1))
+
    def writeRhsStochasticFile(self, outfile, nscenarios):
       '''
       writes the scenarios with RHS stochasticity

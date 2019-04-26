@@ -1,12 +1,12 @@
 import numpy as np
 
-STOCH_RHS = 0
-STOCH_COEF = 1
-STOCH_OBJ = 2
-STOCH_COUNT = 3
+STOCH_RHS   = "rhs"
+STOCH_COEF  = "coef"
+STOCH_OBJ   = "obj"
+STOCH_TYPES = [STOCH_RHS, STOCH_COEF, STOCH_OBJ]
 
-RHS = "RHS"
-ROWS = "ROWS"
+RHS     = "RHS"
+ROWS    = "ROWS"
 COLUMNS = "COLUMNS"
 PERIODS = "PERIODS"
 
@@ -39,7 +39,7 @@ class Instance:
       reads a COR file for an SMPS instance
       '''
       assert self.corfile is not None
-      with open(self.corfile, "rb") as infile:
+      with open(self.corfile, "r") as infile:
          while True:
             line = infile.readline()
             if not line: break
@@ -70,7 +70,7 @@ class Instance:
       reads a TIM file for an SMPS instance
       '''
       assert self.timfile is not None
-      with open(self.timfile, "rb") as infile:
+      with open(self.timfile, "r") as infile:
          while True:
             line = infile.readline()
             if not line: break
@@ -112,6 +112,8 @@ class Instance:
       writes an STO file
       '''
       assert self.stofile is not None
+      assert stochtype in STOCH_TYPES
+
       np.random.seed(nscenarios)
       with open(self.stofile, 'w') as outfile:
          # writing the header of the STO file
@@ -136,10 +138,6 @@ class Instance:
          outfile.write("%s\n"%self.corfile)
          outfile.write("%s\n"%self.timfile)
          outfile.write("%s\n"%self.stofile)
-
-
-
-
 
    def storeConstraints(self, line):
       '''
@@ -170,8 +168,6 @@ class Instance:
       if len(linelist) == 5:
          self.coeffs[linelist[0], linelist[3]] = float(linelist[4])
 
-
-
    def storeConsRhs(self, line):
       '''
       stores the RHS for constraints given by the line
@@ -196,22 +192,22 @@ class Instance:
       '''
       writes the scenarios with RHS stochasticity
       '''
-      print "The write RHS stochastic file has not been implemented"
+      print("The write RHS stochastic file has not been implemented")
 
    def writeCoefStochasticFile(self, outfile, nscenarios):
       '''
       writes the scenarios with coefficient stochasticity
       '''
-      print "The write coefficient stochastic file has not been implemented"
+      print("The write coefficient stochastic file has not been implemented")
 
    def writeObjStochasticFile(self, outfile, nscenarios):
       '''
       writes the scenarios with objective stochasticity
       '''
-      print "The write objective stochastic file has not been implemented"
+      print("The write objective stochastic file has not been implemented")
 
    def writeStageFile(self, outfile):
       '''
-      writes the stages file for a given core file
+      writes the stages (.tim) file for a given core file
       '''
-      pass
+      print("The write stages (.tim) file has not been implemented")
