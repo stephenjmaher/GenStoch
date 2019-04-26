@@ -22,7 +22,7 @@ if __name__ == "__main__":
    numscenarios = sys.argv[3]
    stochtype = ig.STOCH_RHS
    if len(sys.argv) == 5:
-      stochtype = int(sys.argv[4])
+      stochtype = sys.argv[4]
 
    # verifying the inputs for the script
    if not ig.validInputs(instanceclass, instancename, extensions, numscenarios,
