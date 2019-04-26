@@ -1,0 +1,930 @@
+* SCIP STATISTICS
+*   Problem name     : master_noswot
+*   Variables        : 128 (80 binary, 20 integer, 0 implicit integer, 28 continuous)
+*   Constraints      : 182
+*   Obj. scale       : 1
+*   Obj. offset      : 0
+NAME          master_noswot
+OBJSENSE
+  MIN
+ROWS
+ N  Obj 
+ L  m_c1 
+ L  m_c57 
+ L  m_c104 
+ L  m_c140 
+ L  m_c166 
+ L  m_c182 
+ L  p0_c2 
+ L  p0_c3 
+ L  p0_c4 
+ L  p0_c5 
+ L  p0_c6 
+ G  p0_c7 
+ L  p0_c8 
+ G  p0_c9 
+ L  p0_c10 
+ G  p0_c11 
+ L  p0_c12 
+ G  p0_c13 
+ L  p0_c14 
+ G  p0_c15 
+ L  p0_c16 
+ G  p0_c17 
+ G  p0_c18 
+ G  p0_c19 
+ G  p0_c20 
+ G  p0_c21 
+ G  p0_c22 
+ G  p0_c23 
+ G  p0_c24 
+ G  p0_c25 
+ G  p0_c26 
+ G  p0_c27 
+ G  p0_c28 
+ G  p0_c29 
+ G  p0_c30 
+ G  p0_c31 
+ G  p0_c32 
+ G  p0_c33 
+ G  p0_c34 
+ G  p0_c35 
+ G  p0_c36 
+ G  p0_c37 
+ G  p0_c38 
+ G  p0_c39 
+ G  p0_c40 
+ G  p0_c41 
+ G  p0_c42 
+ G  p0_c43 
+ G  p0_c44 
+ G  p0_c45 
+ G  p0_c46 
+ G  p0_c47 
+ G  p0_c48 
+ G  p0_c49 
+ G  p0_c50 
+ G  p0_c51 
+ G  p0_c52 
+ G  p0_c53 
+ G  p0_c54 
+ G  p0_c55 
+ G  p0_c56 
+ L  p0_c58 
+ L  p0_c59 
+ L  p0_c60 
+ L  p0_c61 
+ L  p0_c62 
+ G  p0_c63 
+ L  p0_c64 
+ G  p0_c65 
+ L  p0_c66 
+ G  p0_c67 
+ L  p0_c68 
+ G  p0_c69 
+ L  p0_c70 
+ G  p0_c71 
+ L  p0_c72 
+ G  p0_c73 
+ G  p0_c74 
+ G  p0_c75 
+ G  p0_c76 
+ G  p0_c77 
+ G  p0_c78 
+ G  p0_c79 
+ G  p0_c80 
+ G  p0_c81 
+ G  p0_c82 
+ G  p0_c83 
+ G  p0_c84 
+ G  p0_c85 
+ G  p0_c86 
+ G  p0_c87 
+ G  p0_c88 
+ G  p0_c89 
+ G  p0_c90 
+ G  p0_c91 
+ G  p0_c92 
+ G  p0_c93 
+ G  p0_c94 
+ G  p0_c95 
+ G  p0_c96 
+ G  p0_c97 
+ G  p0_c98 
+ G  p0_c99 
+ G  p0_c100 
+ G  p0_c101 
+ G  p0_c102 
+ G  p0_c103 
+ L  p0_c105 
+ L  p0_c106 
+ L  p0_c107 
+ L  p0_c108 
+ L  p0_c109 
+ G  p0_c110 
+ L  p0_c111 
+ G  p0_c112 
+ L  p0_c113 
+ G  p0_c114 
+ L  p0_c115 
+ G  p0_c116 
+ L  p0_c117 
+ G  p0_c118 
+ L  p0_c119 
+ G  p0_c120 
+ G  p0_c121 
+ G  p0_c122 
+ G  p0_c123 
+ G  p0_c124 
+ G  p0_c125 
+ G  p0_c126 
+ G  p0_c127 
+ G  p0_c128 
+ G  p0_c129 
+ G  p0_c130 
+ G  p0_c131 
+ G  p0_c132 
+ G  p0_c133 
+ G  p0_c134 
+ G  p0_c135 
+ G  p0_c136 
+ G  p0_c137 
+ G  p0_c138 
+ G  p0_c139 
+ L  p0_c141 
+ L  p0_c142 
+ L  p0_c143 
+ L  p0_c144 
+ L  p0_c145 
+ G  p0_c146 
+ E  p0_c147 
+ G  p0_c148 
+ E  p0_c149 
+ G  p0_c150 
+ L  p0_c151 
+ G  p0_c152 
+ L  p0_c153 
+ G  p0_c154 
+ L  p0_c155 
+ G  p0_c156 
+ G  p0_c157 
+ G  p0_c158 
+ G  p0_c159 
+ G  p0_c160 
+ G  p0_c161 
+ G  p0_c162 
+ G  p0_c163 
+ G  p0_c164 
+ G  p0_c165 
+ L  p0_c167 
+ L  p0_c168 
+ L  p0_c169 
+ L  p0_c170 
+ L  p0_c171 
+ G  p0_c172 
+ L  p0_c173 
+ G  p0_c174 
+ L  p0_c175 
+ G  p0_c176 
+ L  p0_c177 
+ G  p0_c178 
+ L  p0_c179 
+ G  p0_c180 
+ L  p0_c181 
+COLUMNS
+    INTSTART   'MARKER'                             'INTORG'                            
+    t_x98      p0_c162                  -2.0833001  p0_c178                           1 
+    t_x98      p0_c99                   -2.0833001  p0_c53                   -2.0833001 
+    t_x98      p0_c136                  -2.0833001  p0_c179                           1 
+    t_x98      m_c1                              1  p0_c170                   2.0833001 
+    t_x98      m_c182                            1  Obj                              -1 
+    t_x96      p0_c97                   -2.0833001  p0_c51                   -2.0833001 
+    t_x96      m_c1                              1  p0_c176                           1 
+    t_x96      p0_c169                   2.0833001  p0_c134                  -2.0833001 
+    t_x96      m_c182                            1  p0_c177                           1 
+    t_x96      p0_c160                  -2.0833001  Obj                              -1 
+    t_x94      p0_c95                   -2.0833001  m_c182                            1 
+    t_x94      p0_c174                           1  p0_c158                  -2.0833001 
+    t_x94      p0_c49                   -2.0833001  Obj                              -1 
+    t_x94      m_c1                              1  p0_c168                   2.0833001 
+    t_x94      p0_c132                  -2.0833001  p0_c175                           1 
+    t_x92      m_c182                            1  p0_c172                           1 
+    t_x92      p0_c156                  -2.0833001  p0_c167                   2.0833001 
+    t_x92      Obj                              -1  p0_c173                           1 
+    t_x92      p0_c47                   -2.0833001  m_c1                              1 
+    t_x92      p0_c130                  -2.0833001  p0_c93                   -2.0833001 
+    t_x90      Obj                              -1  m_c166                            1 
+    t_x90      p0_c145                   2.2400999  p0_c45                   -2.2400999 
+    t_x90      p0_c165                  -2.2400999  p0_c154                           1 
+    t_x90      p0_c128                  -2.2400999  m_c1                              1 
+    t_x90      p0_c155                           1  p0_c91                   -2.2400999 
+    t_x88      Obj                              -1  p0_c144                   2.2400999 
+    t_x88      p0_c163                  -2.2400999  p0_c126                  -2.2400999 
+    t_x88      p0_c43                   -2.2400999  m_c1                              1 
+    t_x88      p0_c153                           1  m_c166                            1 
+    t_x88      p0_c152                           1  p0_c89                   -2.2400999 
+    t_x86      p0_c151                           1  m_c166                            1 
+    t_x86      m_c1                              1  p0_c161                  -2.2400999 
+    t_x86      p0_c150                           1  p0_c124                  -2.2400999 
+    t_x86      Obj                              -1  p0_c143                   2.2400999 
+    t_x86      p0_c87                   -2.2400999  p0_c41                   -2.2400999 
+    t_x84      p0_c149                           1  p0_c148                           1 
+    t_x84      m_c166                            1  p0_c122                  -2.2400999 
+    t_x84      p0_c39                   -2.2400999  p0_c85                   -2.2400999 
+    t_x84      Obj                              -1  p0_c159                  -2.2400999 
+    t_x84      m_c1                              1  p0_c142                   2.2400999 
+    t_x82      p0_c37                   -2.2400999  p0_c83                   -2.2400999 
+    t_x82      m_c166                            1  p0_c120                  -2.2400999 
+    t_x82      m_c1                              1  p0_c141                   2.2400999 
+    t_x82      p0_c146                           1  p0_c147                           1 
+    t_x82      p0_c157                  -2.2400999  Obj                              -1 
+    t_x80      Obj                              -1  m_c140                            1 
+    t_x80      m_c1                              1  p0_c139                  -3.4721999 
+    t_x80      p0_c129                  -3.4721999  p0_c119                           1 
+    t_x80      p0_c81                   -3.4721999  p0_c35                   -3.4721999 
+    t_x80      p0_c118                           1  p0_c109                   3.4721999 
+    t_x78      p0_c137                  -3.4721999  m_c1                              1 
+    t_x78      p0_c79                   -3.4721999  Obj                              -1 
+    t_x78      p0_c127                  -3.4721999  p0_c117                           1 
+    t_x78      p0_c116                           1  p0_c33                   -3.4721999 
+    t_x78      m_c140                            1  p0_c108                   3.4721999 
+    t_x76      p0_c107                   3.4721999  p0_c77                   -3.4721999 
+    t_x76      Obj                              -1  p0_c114                           1 
+    t_x76      m_c140                            1  p0_c135                  -3.4721999 
+    t_x76      p0_c31                   -3.4721999  p0_c125                  -3.4721999 
+    t_x76      m_c1                              1  p0_c115                           1 
+    t_x74      p0_c106                   3.4721999  m_c140                            1 
+    t_x74      m_c1                              1  p0_c113                           1 
+    t_x74      Obj                              -1  p0_c133                  -3.4721999 
+    t_x74      p0_c112                           1  p0_c75                   -3.4721999 
+    t_x74      p0_c29                   -3.4721999  p0_c123                  -3.4721999 
+    t_x72      p0_c121                  -3.4721999  p0_c73                   -3.4721999 
+    t_x72      p0_c111                           1  p0_c110                           1 
+    t_x72      p0_c131                  -3.4721999  m_c140                            1 
+    t_x72      m_c1                              1  p0_c27                   -3.4721999 
+    t_x72      Obj                              -1  p0_c105                   3.4721999 
+    t_x70      p0_c72                            1  p0_c71                            1 
+    t_x70      p0_c62                    2.9762001  p0_c25                   -2.9762001 
+    t_x70      p0_c82                   -2.9762001  p0_c92                   -2.9762001 
+    t_x70      p0_c102                  -2.9762001  p0_c103                           1 
+    t_x70      m_c1                              1  Obj                              -1 
+    t_x70      m_c104                            1 
+    t_x68      p0_c23                   -2.9762001  p0_c80                   -2.9762001 
+    t_x68      Obj                              -1  p0_c70                            1 
+    t_x68      p0_c69                            1  p0_c90                   -2.9762001 
+    t_x68      p0_c100                  -2.9762001  p0_c61                    2.9762001 
+    t_x68      m_c104                            1  p0_c103                           1 
+    t_x68      m_c1                              1 
+    t_x66      m_c104                            1  p0_c78                   -2.9762001 
+    t_x66      Obj                              -1  p0_c68                            1 
+    t_x66      p0_c21                   -2.9762001  p0_c88                   -2.9762001 
+    t_x66      m_c1                              1  p0_c98                   -2.9762001 
+    t_x66      p0_c103                           1  p0_c60                    2.9762001 
+    t_x66      p0_c67                            1 
+    t_x64      p0_c76                   -2.9762001  Obj                              -1 
+    t_x64      p0_c103                           1  p0_c86                   -2.9762001 
+    t_x64      m_c1                              1  p0_c66                            1 
+    t_x64      m_c104                            1  p0_c96                   -2.9762001 
+    t_x64      p0_c59                    2.9762001  p0_c65                            1 
+    t_x64      p0_c19                   -2.9762001 
+    t_x62      p0_c58                    2.9762001  p0_c74                   -2.9762001 
+    t_x62      p0_c94                   -2.9762001  m_c1                              1 
+    t_x62      p0_c17                   -2.9762001  p0_c84                   -2.9762001 
+    t_x62      p0_c64                            1  p0_c63                            1 
+    t_x62      m_c104                            1  Obj                              -1 
+    t_x62      p0_c103                           1 
+    t_x60      p0_c15                            1  p0_c26                   -2.0833001 
+    t_x60      Obj                              -1  m_c57                             1 
+    t_x60      p0_c6                     2.0833001  p0_c46                   -2.0833001 
+    t_x60      p0_c36                   -2.0833001  p0_c56                   -2.0833001 
+    t_x60      m_c1                              1  p0_c16                            1 
+    t_x58      p0_c24                   -2.0833001  p0_c5                     2.0833001 
+    t_x58      m_c57                             1  p0_c44                   -2.0833001 
+    t_x58      p0_c13                            1  p0_c34                   -2.0833001 
+    t_x58      p0_c54                   -2.0833001  m_c1                              1 
+    t_x58      p0_c14                            1  Obj                              -1 
+    t_x56      Obj                              -1  p0_c52                   -2.0833001 
+    t_x56      m_c1                              1  p0_c4                     2.0833001 
+    t_x56      p0_c32                   -2.0833001  p0_c12                            1 
+    t_x56      m_c57                             1  p0_c22                   -2.0833001 
+    t_x56      p0_c42                   -2.0833001  p0_c11                            1 
+    t_x54      p0_c30                   -2.0833001  m_c1                              1 
+    t_x54      Obj                              -1  m_c57                             1 
+    t_x54      p0_c3                     2.0833001  p0_c20                   -2.0833001 
+    t_x54      p0_c10                            1  p0_c50                   -2.0833001 
+    t_x54      p0_c40                   -2.0833001  p0_c9                             1 
+    t_x52      p0_c38                   -2.0833001  p0_c48                   -2.0833001 
+    t_x52      p0_c18                   -2.0833001  m_c57                             1 
+    t_x52      p0_c2                     2.0833001  Obj                              -1 
+    t_x52      p0_c28                   -2.0833001  p0_c8                             1 
+    t_x52      p0_c7                             1  m_c1                              1 
+    t_x100     p0_c181                           1  p0_c101                  -2.0833001 
+    t_x100     p0_c180                           1  p0_c55                   -2.0833001 
+    t_x100     m_c1                              1  p0_c138                  -2.0833001 
+    t_x100     p0_c164                  -2.0833001  m_c182                            1 
+    t_x100     p0_c171                   2.0833001  Obj                              -1 
+    INTEND     'MARKER'                             'INTEND'                            
+    t_x128     Obj                               0 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x51   p0_c7                            -1  p0_c38                        -0.25 
+    pr_t_x51   p0_c8                    -9.6000004  p0_c18                        -0.75 
+    pr_t_x51   p0_c48                        -0.25  p0_c28                      -0.6667 
+    pr_t_x51   Obj                               0  p0_c2                           -20 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x101  p0_c2                             1  p0_c18                           -1 
+    pr_t_x101  p0_c27                            1  p0_c17                            1 
+    pr_t_x101  Obj                               0  p0_c38                           -1 
+    pr_t_x101  p0_c28                           -1  p0_c48                           -1 
+    pr_t_x101  p0_c47                            1  p0_c37                            1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x53   Obj                               0  p0_c50                        -0.25 
+    pr_t_x53   p0_c10                   -9.6000004  p0_c20                        -0.75 
+    pr_t_x53   p0_c40                        -0.25  p0_c3                           -20 
+    pr_t_x53   p0_c30                      -0.6667  p0_c9                            -1 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x102  Obj                               0  p0_c30                           -1 
+    pr_t_x102  p0_c50                           -1  p0_c39                            1 
+    pr_t_x102  p0_c40                           -1  p0_c49                            1 
+    pr_t_x102  p0_c19                            1  p0_c29                            1 
+    pr_t_x102  p0_c3                             1  p0_c20                           -1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x55   p0_c22                        -0.75  Obj                               0 
+    pr_t_x55   p0_c32                      -0.6667  p0_c11                           -1 
+    pr_t_x55   p0_c4                           -20  p0_c52                        -0.25 
+    pr_t_x55   p0_c42                        -0.25  p0_c12                   -9.6000004 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x103  p0_c31                            1  p0_c41                            1 
+    pr_t_x103  p0_c4                             1  Obj                               0 
+    pr_t_x103  p0_c51                            1  p0_c32                           -1 
+    pr_t_x103  p0_c42                           -1  p0_c21                            1 
+    pr_t_x103  p0_c22                           -1  p0_c52                           -1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x57   Obj                               0  p0_c54                        -0.25 
+    pr_t_x57   p0_c44                        -0.25  p0_c13                           -1 
+    pr_t_x57   p0_c14                   -9.6000004  p0_c34                      -0.6667 
+    pr_t_x57   p0_c5                           -20  p0_c24                        -0.75 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x104  p0_c33                            1  p0_c43                            1 
+    pr_t_x104  p0_c44                           -1  p0_c34                           -1 
+    pr_t_x104  p0_c24                           -1  p0_c54                           -1 
+    pr_t_x104  p0_c53                            1  p0_c23                            1 
+    pr_t_x104  Obj                               0  p0_c5                             1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x59   p0_c15                           -1  p0_c56                        -0.25 
+    pr_t_x59   Obj                               0  p0_c46                        -0.25 
+    pr_t_x59   p0_c6                           -16  p0_c26                        -0.75 
+    pr_t_x59   p0_c16                   -7.6799998  p0_c36                      -0.6667 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x105  p0_c45                            1  p0_c56                           -1 
+    pr_t_x105  p0_c6                             1  p0_c55                            1 
+    pr_t_x105  p0_c25                            1  p0_c26                           -1 
+    pr_t_x105  p0_c36                           -1  p0_c46                           -1 
+    pr_t_x105  Obj                               0  p0_c35                            1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x1    p0_c17                           21  p0_c18                          -21 
+    pr_t_x1    Obj                               0 
+    pr_t_x61   Obj                               0  p0_c17                      -0.6667 
+    pr_t_x61   p0_c94                      -0.6667  p0_c63                           -1 
+    pr_t_x61   p0_c74                      -0.6667  p0_c64                   -6.7199998 
+    pr_t_x61   p0_c84                      -0.6667  p0_c58                          -20 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x106  p0_c74                           -1  p0_c84                           -1 
+    pr_t_x106  p0_c18                            1  p0_c58                            1 
+    pr_t_x106  p0_c94                           -1  p0_c73                            1 
+    pr_t_x106  p0_c83                            1  p0_c17                           -1 
+    pr_t_x106  p0_c93                            1  Obj                               0 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x2    p0_c20                          -21  p0_c19                           21 
+    pr_t_x2    Obj                               0 
+    pr_t_x63   p0_c96                      -0.6667  p0_c86                      -0.6667 
+    pr_t_x63   p0_c76                      -0.6667  p0_c59                          -20 
+    pr_t_x63   p0_c19                      -0.6667  Obj                               0 
+    pr_t_x63   p0_c65                           -1  p0_c66                   -6.7199998 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x107  p0_c95                            1  p0_c59                            1 
+    pr_t_x107  p0_c19                           -1  p0_c75                            1 
+    pr_t_x107  p0_c96                           -1  p0_c85                            1 
+    pr_t_x107  p0_c76                           -1  p0_c20                            1 
+    pr_t_x107  Obj                               0  p0_c86                           -1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x3    Obj                               0  p0_c21                           21 
+    pr_t_x3    p0_c22                          -21 
+    pr_t_x65   p0_c78                      -0.6667  p0_c67                           -1 
+    pr_t_x65   p0_c68                   -6.7199998  p0_c88                      -0.6667 
+    pr_t_x65   p0_c98                      -0.6667  p0_c21                      -0.6667 
+    pr_t_x65   p0_c60                          -20  Obj                               0 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x108  p0_c98                           -1  p0_c60                            1 
+    pr_t_x108  p0_c87                            1  Obj                               0 
+    pr_t_x108  p0_c97                            1  p0_c22                            1 
+    pr_t_x108  p0_c78                           -1  p0_c88                           -1 
+    pr_t_x108  p0_c21                           -1  p0_c77                            1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x4    p0_c24                          -21  p0_c23                           21 
+    pr_t_x4    Obj                               0 
+    pr_t_x67   p0_c90                      -0.6667  p0_c100                     -0.6667 
+    pr_t_x67   Obj                               0  p0_c23                      -0.6667 
+    pr_t_x67   p0_c70                   -6.7199998  p0_c61                          -20 
+    pr_t_x67   p0_c69                           -1  p0_c80                      -0.6667 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x109  p0_c23                           -1  p0_c89                            1 
+    pr_t_x109  p0_c90                           -1  p0_c100                          -1 
+    pr_t_x109  p0_c24                            1  p0_c79                            1 
+    pr_t_x109  Obj                               0  p0_c99                            1 
+    pr_t_x109  p0_c80                           -1  p0_c61                            1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x5    p0_c26                          -21  Obj                               0 
+    pr_t_x5    p0_c25                           21 
+    pr_t_x69   p0_c25                      -0.6667  p0_c72                   -5.3759999 
+    pr_t_x69   p0_c82                      -0.6667  Obj                               0 
+    pr_t_x69   p0_c102                     -0.6667  p0_c71                           -1 
+    pr_t_x69   p0_c62                          -16  p0_c92                      -0.6667 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x110  p0_c62                            1  p0_c91                            1 
+    pr_t_x110  p0_c92                           -1  p0_c81                            1 
+    pr_t_x110  p0_c26                            1  p0_c25                           -1 
+    pr_t_x110  p0_c101                           1  p0_c102                          -1 
+    pr_t_x110  Obj                               0  p0_c82                           -1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x6    p0_c27                           21  Obj                               0 
+    pr_t_x6    p0_c28                          -21 
+    pr_t_x71   p0_c121                     -0.6667  p0_c73                        -0.75 
+    pr_t_x71   p0_c27                      -0.6667  p0_c110                          -1 
+    pr_t_x71   p0_c105                         -20  Obj                               0 
+    pr_t_x71   p0_c111                  -5.7600002  p0_c131                     -0.6667 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x111  p0_c28                            1  p0_c105                           1 
+    pr_t_x111  p0_c27                           -1  p0_c120                           1 
+    pr_t_x111  p0_c121                          -1  p0_c131                          -1 
+    pr_t_x111  p0_c73                           -1  p0_c74                            1 
+    pr_t_x111  Obj                               0  p0_c130                           1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x7    p0_c30                          -21  p0_c29                           21 
+    pr_t_x7    Obj                               0 
+    pr_t_x73   p0_c123                     -0.6667  p0_c106                         -20 
+    pr_t_x73   p0_c113                  -5.7600002  p0_c75                        -0.75 
+    pr_t_x73   Obj                               0  p0_c29                      -0.6667 
+    pr_t_x73   p0_c133                     -0.6667  p0_c112                          -1 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x112  p0_c76                            1  p0_c123                          -1 
+    pr_t_x112  p0_c133                          -1  p0_c122                           1 
+    pr_t_x112  p0_c132                           1  p0_c29                           -1 
+    pr_t_x112  Obj                               0  p0_c30                            1 
+    pr_t_x112  p0_c75                           -1  p0_c106                           1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x8    p0_c31                           21  Obj                               0 
+    pr_t_x8    p0_c32                          -21 
+    pr_t_x75   p0_c115                  -5.7600002  Obj                               0 
+    pr_t_x75   p0_c77                        -0.75  p0_c107                         -20 
+    pr_t_x75   p0_c114                          -1  p0_c135                     -0.6667 
+    pr_t_x75   p0_c31                      -0.6667  p0_c125                     -0.6667 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x113  p0_c31                           -1  p0_c134                           1 
+    pr_t_x113  p0_c78                            1  p0_c125                          -1 
+    pr_t_x113  p0_c124                           1  p0_c135                          -1 
+    pr_t_x113  p0_c32                            1  Obj                               0 
+    pr_t_x113  p0_c77                           -1  p0_c107                           1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x9    Obj                               0  p0_c34                          -21 
+    pr_t_x9    p0_c33                           21 
+    pr_t_x77   p0_c127                     -0.6667  p0_c117                  -5.7600002 
+    pr_t_x77   p0_c116                          -1  p0_c33                      -0.6667 
+    pr_t_x77   Obj                               0  p0_c108                         -20 
+    pr_t_x77   p0_c137                     -0.6667  p0_c79                        -0.75 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x114  p0_c127                          -1  p0_c34                            1 
+    pr_t_x114  p0_c126                           1  p0_c108                           1 
+    pr_t_x114  p0_c33                           -1  p0_c137                          -1 
+    pr_t_x114  p0_c80                            1  p0_c79                           -1 
+    pr_t_x114  Obj                               0  p0_c136                           1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x10   p0_c35                           21  Obj                               0 
+    pr_t_x10   p0_c36                          -21 
+    pr_t_x79   p0_c109                         -16  p0_c81                        -0.75 
+    pr_t_x79   p0_c129                     -0.6667  p0_c139                     -0.6667 
+    pr_t_x79   p0_c118                          -1  Obj                               0 
+    pr_t_x79   p0_c119                  -4.6079998  p0_c35                      -0.6667 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x115  p0_c129                          -1  p0_c35                           -1 
+    pr_t_x115  p0_c109                           1  p0_c128                           1 
+    pr_t_x115  p0_c36                            1  p0_c138                           1 
+    pr_t_x115  Obj                               0  p0_c139                          -1 
+    pr_t_x115  p0_c82                            1  p0_c81                           -1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x11   p0_c38                          -21  Obj                               0 
+    pr_t_x11   p0_c37                           21 
+    pr_t_x81   p0_c120                     -0.6667  Obj                               0 
+    pr_t_x81   p0_c37                        -0.25  p0_c147                  -8.9280005 
+    pr_t_x81   p0_c83                        -0.75  p0_c157                       -0.25 
+    pr_t_x81   p0_c146                          -1  p0_c141                         -20 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x116  p0_c157                          -1  p0_c156                           1 
+    pr_t_x116  p0_c38                            1  p0_c120                          -1 
+    pr_t_x116  p0_c121                           1  p0_c37                           -1 
+    pr_t_x116  Obj                               0  p0_c84                            1 
+    pr_t_x116  p0_c83                           -1  p0_c141                           1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x12   p0_c39                           21  Obj                               0 
+    pr_t_x12   p0_c40                          -21 
+    pr_t_x83   p0_c39                        -0.25  p0_c148                          -1 
+    pr_t_x83   p0_c122                     -0.6667  p0_c142                         -20 
+    pr_t_x83   p0_c149                  -8.9280005  Obj                               0 
+    pr_t_x83   p0_c85                        -0.75  p0_c159                       -0.25 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x117  Obj                               0  p0_c122                          -1 
+    pr_t_x117  p0_c123                           1  p0_c142                           1 
+    pr_t_x117  p0_c86                            1  p0_c85                           -1 
+    pr_t_x117  p0_c159                          -1  p0_c39                           -1 
+    pr_t_x117  p0_c40                            1  p0_c158                           1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x13   p0_c41                           21  Obj                               0 
+    pr_t_x13   p0_c42                          -21 
+    pr_t_x85   p0_c41                        -0.25  Obj                               0 
+    pr_t_x85   p0_c87                        -0.75  p0_c124                     -0.6667 
+    pr_t_x85   p0_c161                       -0.25  p0_c143                         -20 
+    pr_t_x85   p0_c150                          -1  p0_c151                  -8.9280005 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x118  p0_c160                           1  p0_c42                            1 
+    pr_t_x118  p0_c143                           1  p0_c124                          -1 
+    pr_t_x118  p0_c88                            1  p0_c87                           -1 
+    pr_t_x118  Obj                               0  p0_c161                          -1 
+    pr_t_x118  p0_c41                           -1  p0_c125                           1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x14   p0_c44                          -21  p0_c43                           21 
+    pr_t_x14   Obj                               0 
+    pr_t_x87   p0_c153                  -8.9280005  Obj                               0 
+    pr_t_x87   p0_c89                        -0.75  p0_c43                        -0.25 
+    pr_t_x87   p0_c126                     -0.6667  p0_c163                       -0.25 
+    pr_t_x87   p0_c144                         -20  p0_c152                          -1 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x119  p0_c126                          -1  p0_c162                           1 
+    pr_t_x119  p0_c43                           -1  p0_c163                          -1 
+    pr_t_x119  p0_c127                           1  p0_c44                            1 
+    pr_t_x119  Obj                               0  p0_c144                           1 
+    pr_t_x119  p0_c89                           -1  p0_c90                            1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x15   p0_c46                          -21  p0_c45                           21 
+    pr_t_x15   Obj                               0 
+    pr_t_x89   p0_c154                          -1  p0_c91                        -0.75 
+    pr_t_x89   Obj                               0  p0_c128                     -0.6667 
+    pr_t_x89   p0_c145                         -16  p0_c45                        -0.25 
+    pr_t_x89   p0_c165                       -0.25  p0_c155                  -7.1423998 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x120  p0_c92                            1  p0_c128                          -1 
+    pr_t_x120  p0_c91                           -1  p0_c165                          -1 
+    pr_t_x120  p0_c145                           1  p0_c164                           1 
+    pr_t_x120  p0_c129                           1  Obj                               0 
+    pr_t_x120  p0_c45                           -1  p0_c46                            1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x16   p0_c48                          -21  p0_c47                           21 
+    pr_t_x16   Obj                               0 
+    pr_t_x91   p0_c47                      -0.6667  p0_c167                         -20 
+    pr_t_x91   p0_c156                     -0.6667  p0_c93                        -0.75 
+    pr_t_x91   Obj                               0  p0_c173                  -9.6000004 
+    pr_t_x91   p0_c130                     -0.6667  p0_c172                          -1 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x121  p0_c93                           -1  p0_c48                            1 
+    pr_t_x121  p0_c94                            1  p0_c157                           1 
+    pr_t_x121  p0_c131                           1  p0_c130                          -1 
+    pr_t_x121  p0_c156                          -1  p0_c47                           -1 
+    pr_t_x121  p0_c167                           1  Obj                               0 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x17   p0_c49                           21  p0_c50                          -21 
+    pr_t_x17   Obj                               0 
+    pr_t_x93   p0_c168                         -20  Obj                               0 
+    pr_t_x93   p0_c95                        -0.75  p0_c49                      -0.6667 
+    pr_t_x93   p0_c132                     -0.6667  p0_c174                          -1 
+    pr_t_x93   p0_c175                  -9.6000004  p0_c158                     -0.6667 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x122  p0_c159                           1  p0_c158                          -1 
+    pr_t_x122  p0_c96                            1  p0_c50                            1 
+    pr_t_x122  p0_c168                           1  p0_c49                           -1 
+    pr_t_x122  Obj                               0  p0_c133                           1 
+    pr_t_x122  p0_c95                           -1  p0_c132                          -1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x18   Obj                               0  p0_c51                           21 
+    pr_t_x18   p0_c52                          -21 
+    pr_t_x95   p0_c97                        -0.75  p0_c51                      -0.6667 
+    pr_t_x95   p0_c134                     -0.6667  Obj                               0 
+    pr_t_x95   p0_c176                          -1  p0_c177                  -9.6000004 
+    pr_t_x95   p0_c160                     -0.6667  p0_c169                         -20 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x123  p0_c98                            1  p0_c134                          -1 
+    pr_t_x123  p0_c169                           1  p0_c160                          -1 
+    pr_t_x123  p0_c135                           1  p0_c161                           1 
+    pr_t_x123  p0_c51                           -1  p0_c52                            1 
+    pr_t_x123  p0_c97                           -1  Obj                               0 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x19   p0_c54                          -21  p0_c53                           21 
+    pr_t_x19   Obj                               0 
+    pr_t_x97   p0_c53                      -0.6667  p0_c99                        -0.75 
+    pr_t_x97   p0_c179                  -9.6000004  p0_c178                          -1 
+    pr_t_x97   p0_c136                     -0.6667  p0_c170                         -20 
+    pr_t_x97   Obj                               0  p0_c162                     -0.6667 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x124  p0_c170                           1  Obj                               0 
+    pr_t_x124  p0_c137                           1  p0_c163                           1 
+    pr_t_x124  p0_c136                          -1  p0_c162                          -1 
+    pr_t_x124  p0_c53                           -1  p0_c99                           -1 
+    pr_t_x124  p0_c100                           1  p0_c54                            1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x99   p0_c164                     -0.6667  p0_c55                      -0.6667 
+    pr_t_x99   p0_c138                     -0.6667  Obj                               0 
+    pr_t_x99   p0_c180                          -1  p0_c101                       -0.75 
+    pr_t_x99   p0_c171                         -16  p0_c181                  -7.6799998 
+    pr_t_x20   Obj                               0  p0_c55                           21 
+    pr_t_x20   p0_c56                          -21 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x125  p0_c138                          -1  p0_c165                           1 
+    pr_t_x125  p0_c164                          -1  p0_c171                           1 
+    pr_t_x125  p0_c101                          -1  Obj                               0 
+    pr_t_x125  p0_c102                           1  p0_c55                           -1 
+    pr_t_x125  p0_c139                           1  p0_c56                            1 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x21   p0_c73                           21  p0_c74                          -21 
+    pr_t_x21   Obj                               0 
+    pr_t_x22   p0_c75                           21  Obj                               0 
+    pr_t_x22   p0_c76                          -21 
+    pr_t_x23   p0_c78                          -21  Obj                               0 
+    pr_t_x23   p0_c77                           21 
+    pr_t_x24   p0_c79                           21  Obj                               0 
+    pr_t_x24   p0_c80                          -21 
+    pr_t_x25   Obj                               0  p0_c81                           21 
+    pr_t_x25   p0_c82                          -21 
+    pr_t_x26   p0_c84                          -21  Obj                               0 
+    pr_t_x26   p0_c83                           21 
+    pr_t_x27   p0_c86                          -21  p0_c85                           21 
+    pr_t_x27   Obj                               0 
+    pr_t_x28   p0_c88                          -21  p0_c87                           21 
+    pr_t_x28   Obj                               0 
+    pr_t_x29   p0_c89                           21  p0_c90                          -21 
+    pr_t_x29   Obj                               0 
+    pr_t_x30   p0_c91                           21  p0_c92                          -21 
+    pr_t_x30   Obj                               0 
+    pr_t_x31   p0_c93                           21  p0_c94                          -21 
+    pr_t_x31   Obj                               0 
+    pr_t_x32   p0_c95                           21  p0_c96                          -21 
+    pr_t_x32   Obj                               0 
+    pr_t_x33   p0_c98                          -21  Obj                               0 
+    pr_t_x33   p0_c97                           21 
+    pr_t_x34   p0_c99                           21  Obj                               0 
+    pr_t_x34   p0_c100                         -21 
+    pr_t_x35   p0_c101                          21  Obj                               0 
+    pr_t_x35   p0_c102                         -21 
+    pr_t_x36   p0_c120                          21  Obj                               0 
+    pr_t_x36   p0_c121                         -21 
+    pr_t_x37   p0_c123                         -21  p0_c122                          21 
+    pr_t_x37   Obj                               0 
+    pr_t_x38   p0_c125                         -21  p0_c124                          21 
+    pr_t_x38   Obj                               0 
+    pr_t_x39   Obj                               0  p0_c127                         -21 
+    pr_t_x39   p0_c126                          21 
+    pr_t_x40   Obj                               0  p0_c129                         -21 
+    pr_t_x40   p0_c128                          21 
+    pr_t_x41   p0_c131                         -21  Obj                               0 
+    pr_t_x41   p0_c130                          21 
+    pr_t_x42   Obj                               0  p0_c133                         -21 
+    pr_t_x42   p0_c132                          21 
+    pr_t_x43   p0_c135                         -21  Obj                               0 
+    pr_t_x43   p0_c134                          21 
+    pr_t_x44   p0_c137                         -21  p0_c136                          21 
+    pr_t_x44   Obj                               0 
+    pr_t_x45   p0_c139                         -21  p0_c138                          21 
+    pr_t_x45   Obj                               0 
+    INTEND     'MARKER'                             'INTEND'                            
+    pr_t_x127  p0_c147                           1  Obj                               0 
+    pr_t_x126  p0_c149                           1  Obj                               0 
+    INTSTART   'MARKER'                             'INTORG'                            
+    pr_t_x46   p0_c156                          21  p0_c157                         -21 
+    pr_t_x46   Obj                               0 
+    pr_t_x47   p0_c158                          21  Obj                               0 
+    pr_t_x47   p0_c159                         -21 
+    pr_t_x48   p0_c160                          21  Obj                               0 
+    pr_t_x48   p0_c161                         -21 
+    pr_t_x49   p0_c162                          21  p0_c163                         -21 
+    pr_t_x49   Obj                               0 
+    pr_t_x50   Obj                               0  p0_c165                         -21 
+    pr_t_x50   p0_c164                          21 
+    INTEND     'MARKER'                             'INTEND'                            
+RHS
+    RHS        m_c1                             43  m_c57                            38 
+    RHS        m_c104                            9  m_c140                            2 
+    RHS        m_c166                            1  m_c182                            2 
+    RHS        p0_c2                             0  p0_c3                             0 
+    RHS        p0_c4                             0  p0_c5                             0 
+    RHS        p0_c6                             0  p0_c7                             0 
+    RHS        p0_c8                             0  p0_c9                             0 
+    RHS        p0_c10                            0  p0_c11                            0 
+    RHS        p0_c12                            0  p0_c13                            0 
+    RHS        p0_c14                            0  p0_c15                            0 
+    RHS        p0_c16                            0  p0_c17                            0 
+    RHS        p0_c18                          -21  p0_c19                            0 
+    RHS        p0_c20                          -21  p0_c21                            0 
+    RHS        p0_c22                          -21  p0_c23                            0 
+    RHS        p0_c24                          -21  p0_c25                            0 
+    RHS        p0_c26                          -21  p0_c27                            0 
+    RHS        p0_c28                          -21  p0_c29                            0 
+    RHS        p0_c30                          -21  p0_c31                            0 
+    RHS        p0_c32                          -21  p0_c33                            0 
+    RHS        p0_c34                          -21  p0_c35                            0 
+    RHS        p0_c36                          -21  p0_c37                            0 
+    RHS        p0_c38                          -21  p0_c39                            0 
+    RHS        p0_c40                          -21  p0_c41                            0 
+    RHS        p0_c42                          -21  p0_c43                            0 
+    RHS        p0_c44                          -21  p0_c45                            0 
+    RHS        p0_c46                          -21  p0_c47                            0 
+    RHS        p0_c48                          -21  p0_c49                            0 
+    RHS        p0_c50                          -21  p0_c51                            0 
+    RHS        p0_c52                          -21  p0_c53                            0 
+    RHS        p0_c54                          -21  p0_c55                            0 
+    RHS        p0_c56                          -21  p0_c58                            0 
+    RHS        p0_c59                            0  p0_c60                            0 
+    RHS        p0_c61                            0  p0_c62                            0 
+    RHS        p0_c63                            0  p0_c64                            0 
+    RHS        p0_c65                            0  p0_c66                            0 
+    RHS        p0_c67                            0  p0_c68                            0 
+    RHS        p0_c69                            0  p0_c70                            0 
+    RHS        p0_c71                            0  p0_c72                            0 
+    RHS        p0_c73                            0  p0_c74                          -21 
+    RHS        p0_c75                            0  p0_c76                          -21 
+    RHS        p0_c77                            0  p0_c78                          -21 
+    RHS        p0_c79                            0  p0_c80                          -21 
+    RHS        p0_c81                            0  p0_c82                          -21 
+    RHS        p0_c83                            0  p0_c84                          -21 
+    RHS        p0_c85                            0  p0_c86                          -21 
+    RHS        p0_c87                            0  p0_c88                          -21 
+    RHS        p0_c89                            0  p0_c90                          -21 
+    RHS        p0_c91                            0  p0_c92                          -21 
+    RHS        p0_c93                            0  p0_c94                          -21 
+    RHS        p0_c95                            0  p0_c96                          -21 
+    RHS        p0_c97                            0  p0_c98                          -21 
+    RHS        p0_c99                            0  p0_c100                         -21 
+    RHS        p0_c101                           0  p0_c102                         -21 
+    RHS        p0_c103                           5  p0_c105                           0 
+    RHS        p0_c106                           0  p0_c107                           0 
+    RHS        p0_c108                           0  p0_c109                           0 
+    RHS        p0_c110                           0  p0_c111                           0 
+    RHS        p0_c112                           0  p0_c113                           0 
+    RHS        p0_c114                           0  p0_c115                           0 
+    RHS        p0_c116                           0  p0_c117                           0 
+    RHS        p0_c118                           0  p0_c119                           0 
+    RHS        p0_c120                           0  p0_c121                         -21 
+    RHS        p0_c122                           0  p0_c123                         -21 
+    RHS        p0_c124                           0  p0_c125                         -21 
+    RHS        p0_c126                           0  p0_c127                         -21 
+    RHS        p0_c128                           0  p0_c129                         -21 
+    RHS        p0_c130                           0  p0_c131                         -21 
+    RHS        p0_c132                           0  p0_c133                         -21 
+    RHS        p0_c134                           0  p0_c135                         -21 
+    RHS        p0_c136                           0  p0_c137                         -21 
+    RHS        p0_c138                           0  p0_c139                         -21 
+    RHS        p0_c141                           0  p0_c142                           0 
+    RHS        p0_c143                           0  p0_c144                           0 
+    RHS        p0_c145                           0  p0_c146                           0 
+    RHS        p0_c147                           0  p0_c148                           0 
+    RHS        p0_c149                           0  p0_c150                           0 
+    RHS        p0_c151                           0  p0_c152                           0 
+    RHS        p0_c153                           0  p0_c154                           0 
+    RHS        p0_c155                           0  p0_c156                           0 
+    RHS        p0_c157                         -21  p0_c158                           0 
+    RHS        p0_c159                         -21  p0_c160                           0 
+    RHS        p0_c161                         -21  p0_c162                           0 
+    RHS        p0_c163                         -21  p0_c164                           0 
+    RHS        p0_c165                         -21  p0_c167                           0 
+    RHS        p0_c168                           0  p0_c169                           0 
+    RHS        p0_c170                           0  p0_c171                           0 
+    RHS        p0_c172                           0  p0_c173                           0 
+    RHS        p0_c174                           0  p0_c175                           0 
+    RHS        p0_c176                           0  p0_c177                           0 
+    RHS        p0_c178                           0  p0_c179                           0 
+    RHS        p0_c180                           0  p0_c181                           0 
+BOUNDS
+ BV Bound      t_x90                               
+ BV Bound      t_x88                               
+ BV Bound      t_x86                               
+ BV Bound      t_x84                               
+ BV Bound      t_x82                               
+ BV Bound      pr_t_x51                            
+ BV Bound      pr_t_x53                            
+ BV Bound      pr_t_x55                            
+ BV Bound      pr_t_x57                            
+ BV Bound      pr_t_x59                            
+ BV Bound      pr_t_x1                             
+ BV Bound      pr_t_x61                            
+ BV Bound      pr_t_x2                             
+ BV Bound      pr_t_x63                            
+ BV Bound      pr_t_x3                             
+ BV Bound      pr_t_x65                            
+ BV Bound      pr_t_x4                             
+ BV Bound      pr_t_x67                            
+ BV Bound      pr_t_x5                             
+ BV Bound      pr_t_x69                            
+ BV Bound      pr_t_x6                             
+ BV Bound      pr_t_x71                            
+ BV Bound      pr_t_x7                             
+ BV Bound      pr_t_x73                            
+ BV Bound      pr_t_x8                             
+ BV Bound      pr_t_x75                            
+ BV Bound      pr_t_x9                             
+ BV Bound      pr_t_x77                            
+ BV Bound      pr_t_x10                            
+ BV Bound      pr_t_x79                            
+ BV Bound      pr_t_x11                            
+ BV Bound      pr_t_x81                            
+ BV Bound      pr_t_x12                            
+ BV Bound      pr_t_x83                            
+ BV Bound      pr_t_x13                            
+ BV Bound      pr_t_x85                            
+ BV Bound      pr_t_x14                            
+ BV Bound      pr_t_x87                            
+ BV Bound      pr_t_x15                            
+ BV Bound      pr_t_x89                            
+ BV Bound      pr_t_x16                            
+ BV Bound      pr_t_x91                            
+ BV Bound      pr_t_x17                            
+ BV Bound      pr_t_x93                            
+ BV Bound      pr_t_x18                            
+ BV Bound      pr_t_x95                            
+ BV Bound      pr_t_x19                            
+ BV Bound      pr_t_x97                            
+ BV Bound      pr_t_x99                            
+ BV Bound      pr_t_x20                            
+ BV Bound      pr_t_x21                            
+ BV Bound      pr_t_x22                            
+ BV Bound      pr_t_x23                            
+ BV Bound      pr_t_x24                            
+ BV Bound      pr_t_x25                            
+ BV Bound      pr_t_x26                            
+ BV Bound      pr_t_x27                            
+ BV Bound      pr_t_x28                            
+ BV Bound      pr_t_x29                            
+ BV Bound      pr_t_x30                            
+ BV Bound      pr_t_x31                            
+ BV Bound      pr_t_x32                            
+ BV Bound      pr_t_x33                            
+ BV Bound      pr_t_x34                            
+ BV Bound      pr_t_x35                            
+ BV Bound      pr_t_x36                            
+ BV Bound      pr_t_x37                            
+ BV Bound      pr_t_x38                            
+ BV Bound      pr_t_x39                            
+ BV Bound      pr_t_x40                            
+ BV Bound      pr_t_x41                            
+ BV Bound      pr_t_x42                            
+ BV Bound      pr_t_x43                            
+ BV Bound      pr_t_x44                            
+ BV Bound      pr_t_x45                            
+ BV Bound      pr_t_x46                            
+ BV Bound      pr_t_x47                            
+ BV Bound      pr_t_x48                            
+ BV Bound      pr_t_x49                            
+ BV Bound      pr_t_x50                            
+ UP Bound      t_x58                             9 
+ UP Bound      t_x56                             9 
+ UP Bound      t_x54                             9 
+ UP Bound      t_x52                             9 
+ UP Bound      t_x100                            2 
+ UP Bound      t_x96                             2 
+ UP Bound      t_x94                             2 
+ UP Bound      t_x92                             2 
+ UP Bound      t_x98                             2 
+ UP Bound      t_x80                             2 
+ UP Bound      t_x78                             2 
+ UP Bound      t_x76                             2 
+ UP Bound      t_x74                             2 
+ UP Bound      t_x72                             2 
+ UP Bound      t_x70                             5 
+ UP Bound      t_x68                             6 
+ UP Bound      t_x66                             6 
+ UP Bound      t_x64                             6 
+ UP Bound      t_x62                             6 
+ UP Bound      t_x60                             7 
+ UP Bound      pr_t_x118                        20 
+ UP Bound      pr_t_x112                        20 
+ UP Bound      pr_t_x108                        20 
+ UP Bound      pr_t_x119                        20 
+ UP Bound      pr_t_x101                        20 
+ UP Bound      pr_t_x113                        20 
+ UP Bound      pr_t_x120                        16 
+ UP Bound      pr_t_x103                        20 
+ UP Bound      pr_t_x109                        20 
+ UP Bound      pr_t_x121                        20 
+ UP Bound      pr_t_x114                        20 
+ UP Bound      pr_t_x106                        20 
+ UP Bound      pr_t_x122                        20 
+ FX Bound      t_x128                            0 
+ UP Bound      pr_t_x115                        16 
+ UP Bound      pr_t_x123                        20 
+ UP Bound      pr_t_x110                        16 
+ UP Bound      pr_t_x104                        20 
+ UP Bound      pr_t_x124                        20 
+ UP Bound      pr_t_x116                        20 
+ UP Bound      pr_t_x107                        20 
+ UP Bound      pr_t_x127                 8.9280005 
+ UP Bound      pr_t_x126                 8.9280005 
+ UP Bound      pr_t_x125                        16 
+ UP Bound      pr_t_x111                        20 
+ UP Bound      pr_t_x117                        20 
+ UP Bound      pr_t_x102                        20 
+ UP Bound      pr_t_x105                        16 
+ENDATA
