@@ -15,9 +15,11 @@ The GenStoch package is a package for generating stochastic programming instance
    pip install .
 ```
 
-3. You are done.
+3. Add the path to `instancegen` to your `PYTHONPATH`
 
-4. To exit the virtual environment, call
+4. You are done.
+
+5. To exit the virtual environment, call
 
 ```
    deactivate
