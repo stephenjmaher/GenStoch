@@ -1,4 +1,4 @@
-from .smps_instance import Instance
+from .smps_instance import *
 from .smps_instance_classes import *
 
 instances = {
@@ -6,5 +6,6 @@ instances = {
       "sslp" : SSLPInstance,
       #"smkp" : SMKPInstance,
       "noswot" : NoswotInstance,
+      "snip" : SnipInstance,
       }
 
