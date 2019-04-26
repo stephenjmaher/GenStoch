@@ -164,3 +164,36 @@ class NoswotInstance(Instance):
             ##randrhs = int(np.random.normal(self.rhs[cons], stagestd))
             #randrhs = round(np.random.random_sample())
             #outfile.write("    RHS      %s               %g\n"%(cons, randrhs))
+
+
+class SnipInstance(Instance):
+   '''
+   SMPS output functions for the SNIP instances
+   '''
+
+   def writeStageFile(self, outfile):
+      '''
+      writes the stages file for a given core file
+      '''
+      stageconsstart = []
+      stagevarstart = []
+
+      # scanning all of the constraints to find the different stages
+      stageconsstart.append(self.constraints[0])
+      for cons in self.constraints[1:]:
+         if cons.startswith("sinkcons"):
+            stageconsstart.append(cons)
+            break
+
+      # scanning all of the variables to find the different stages
+      stagevarstart.append(self.variables[0])
+      for var in self.variables[1:]:
+         if var.startswith("node"):
+            stagevarstart.append(var)
+            break
+
+      # writing the stages to the TIM file
+      assert len(stageconsstart) == len(stagevarstart)
+      for i in range(len(stageconsstart)):
+         outfile.write("     %s     %s     STAGE-%d\n"%(stagevarstart[i],
+            stageconsstart[i], i + 1))
